@@ -1,0 +1,6 @@
+{
+    "git.path": "C:/tools/PortableGit-2.35.1.2-64-bit/bin",
+   
+    // Python settings
+    "python.defaultInterpreterPath": "c:\\python39\\python.exe"
+}
