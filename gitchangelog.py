@@ -8,8 +8,8 @@ import git
 gitrepo = "C:\\__myRepo__\\GitHub\\celilaktas\\cheatsheets"
 #gitrepo = "c:\\path-to-git-repo"
 
-def get_tag_info(tagname):
-    return git.repo.git.execute(f"git tag -n {tagname}")[16:]
+def get_tag_info(repo, tagname):
+    return repo.git.execute(f"git tag -n {tagname}")[16:]
     
 def main():
     global gitrepo
@@ -20,14 +20,14 @@ def main():
     for i, tag in enumerate(tags):
         tagname = tags[-i-1]
         commitsha = tags[-i-1].commit.hexsha
-        print(f"\n{tagname} {get_tag_info(tagname)} ({tags[-i-1].commit.committed_datetime.date()})")    
+        print(f"\n{tagname} {get_tag_info(repo, tagname)} ({tags[-i-1].commit.committed_datetime.date()})")    
         print("=========")
         print(f"{tags[-i-1].commit.message}")
         if i<(len(tags)-1):
             cmd = f"git log {tags[-i-2]}..{tags[-i-1]} --oneline"
         else:
             cmd = f"git log {tags[0]} --oneline"
-        log = git.repo.git.execute(cmd)
+        log = repo.git.execute(cmd)
         print(log)
         
 if __name__ == '__main__':
