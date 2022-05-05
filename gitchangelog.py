@@ -2,7 +2,7 @@ import  os
 os.environ["PATH"] = "C:\\tools\\PortableGit-2.35.1.2-64-bit\\bin;%PATH%"
 
 import git
-gitrepo = "C:\\__myRepo__\\GitHub\\celilaktas\\cheatsheets"
+gitrepo = "C:\\__myRepo__\\GitHub\\celilaktas\\gitchangelog"
 #gitrepo = "c:\\path-to-git-repo"
 
 def get_tag_info(repo, tagname):
