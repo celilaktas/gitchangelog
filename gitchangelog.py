@@ -1,6 +1,3 @@
-"""
-
-"""
 import  os
 os.environ["PATH"] = "C:\\tools\\PortableGit-2.35.1.2-64-bit\\bin;%PATH%"
 
